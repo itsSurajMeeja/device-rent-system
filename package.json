@@ -1,0 +1,36 @@
+{
+    "name": "device-rent-system",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "scripts": {
+        "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli",
+        "migration:run": "npx ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/config/ormconfig.ts",
+        "start": "ts-node src/index.ts",
+        "dev": "nodemon src/index.ts",
+        "migrate": "typeorm-ts-node-commonjs migration:run",
+        "seed": "ts-node -r tsconfig-paths/register src/seed.ts",
+        "migration:generate": "npx ts-node ./node_modules/typeorm/cli.js migration:generate ./src/migrations/CreateDeviceTable -d ./src/config/ormconfig.ts"
+    },
+    "dependencies": {
+        "amqplib": "^0.10.3",
+        "body-parser": "^1.20.3",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.1",
+        "mysql2": "^3.11.3",
+        "nodemailer": "^6.9.3",
+        "pg": "^8.13.0",
+        "pg-hstore": "^2.3.4",
+        "reflect-metadata": "^0.1.13",
+        "sequelize": "^6.37.4",
+        "sequelize-cli": "^6.6.2",
+        "typeorm": "^0.3.20",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.0.2"
+    }
+}
